@@ -1,0 +1,48 @@
+@use '_sass-includes/_reset';
+@use '_sass-includes/_grid';
+@use '_sass-includes/_utilities';
+
+:root{
+    --cl-accent: #40a2ec;
+    --cl-text: #000;
+
+    --ft-fam-default: 'Poppins', sans-serif;
+    --ft-fam-h: var(--ft-fam-default);
+
+    --ft-size-default: 20px;
+
+    --ft-lh-default: 1.25;
+}
+
+body{
+    font-family: var(--ft-fam-default);
+    font-size: var(--ft-size-default);
+    line-height: var(--ft-lh-default);
+}
+
+.section{
+    padding-inline: 2.5%;
+}
+.container{
+    margin-inline: auto;
+    max-width: 1600px;
+}
+
+//header
+header{
+    background-color: var(--cl-accent);
+    padding-block: 10px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        nav > ul{
+            display: flex;
+            justify-content: end;
+            list-style: none;
+            gap: 16px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// default vars
+
+$queries : (
+    xs : 480px,
+    sm : 768,
+    md : 992,
+    lg : 1200,
+    xl : 1400,
+    xxl : 1600
+) !default;
+
+$gridcolumns: 12;
+$gaps: 40;
+$sizes: 80;
+
+// Grid
+
+.gridbox{
+    display: grid;
+    grid-auto-flow: dense;
+}
+
+@for $i from 1 through $gaps {
+    .gap-#{$i} {
+        gap: #{$i}px;
+    }
+}
+
+@for $cols from 1 through $gridcolumns{
+    .grid-col-#{$cols} {
+        grid-template-columns: repeat( #{$cols}, 1fr);
+    }
+}
