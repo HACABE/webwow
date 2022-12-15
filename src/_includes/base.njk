@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
 </head>
 <body>
     <header class="section">
@@ -24,10 +24,13 @@
         </div>
     </header>
 
-    {{ content | safe }}
+    <main>{% block content %}{{ content | safe }}{% endblock %}</main>
 
-    <footer class="section">
-        
+
+    <footer class="section py-20">
+        <div class="container">
+            &copy; HACA 2022
+        </div>
     </footer>
 </body>
 </html>

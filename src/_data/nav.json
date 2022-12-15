@@ -1,5 +1,6 @@
 [
 	{"text": "Home", "url": "/"},
+	{"text": "zip's", "url": "/zip"},
 	{"text": "About", "url": "https://haca.be"},
 	{"text": "Facebook", "url": "https://www.facebook.com/hacaagency"},
 	{"text": "Instagram", "url": "https://www.instagram.com/hacaagency/"}

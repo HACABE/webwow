@@ -1,0 +1,10 @@
+---
+pagination:
+    data: postcodes
+    size: 1
+    alias: pc
+permalink: "zip/{{ pc.Postcode | slug }}-{{ pc.Plaatsnaam | slug }}/"
+layout: postcodes.njk
+---
+
+<pre>{{ pc | dump }}</pre>

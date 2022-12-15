@@ -1,6 +1,14 @@
+@use '_sass-includes/_vars' as var;
 @use '_sass-includes/_reset';
-@use '_sass-includes/_grid';
-@use '_sass-includes/_utilities';
+@use '_sass-includes/_grid' with (
+    $queries : var.$queries,
+    $gridcolumns: var.$gridcolumns,
+    $gaps: var.$gaps
+);
+@use '_sass-includes/_utilities' with (
+    $queries : var.$queries,
+    $sizes : var.$sizes
+);
 
 :root{
     --cl-accent: #40a2ec;
@@ -19,7 +27,6 @@ body{
     font-size: var(--ft-size-default);
     line-height: var(--ft-lh-default);
 }
-
 .section{
     padding-inline: 2.5%;
 }
@@ -40,9 +47,13 @@ header{
 
         nav > ul{
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             list-style: none;
             gap: 16px;
         }
     }
+}
+
+footer{
+    background-color: var(--cl-accent);
 }

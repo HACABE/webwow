@@ -1,0 +1,51 @@
+// default vars
+
+$queries : (
+    xxl : 1600,
+    xl : 1400,
+    lg : 1200,
+    md : 992,
+    sm : 768,
+    xs : 480
+) !default;
+
+$sizes: 80 !default;
+
+
+@for $i from 1 through $sizes {
+    .mb-#{$i} { margin-bottom: #{$i}px; }
+    .mt-#{$i} { margin-top: #{$i}px; }
+    .ml-#{$i} { margin-left: #{$i}px; }
+    .mr-#{$i} { margin-right: #{$i}px; }
+    .mx-#{$i} { margin-inline: #{$i}px; }
+    .my-#{$i} {  margin-block: #{$i}px; }
+    .ma-#{$i} { margin: #{$i}px; }
+    .pb-#{$i} { padding-bottom: #{$i}px; }
+    .pt-#{$i} { padding-top: #{$i}px; }
+    .pl-#{$i} { padding-left: #{$i}px; }
+    .pr-#{$i} { padding-right: #{$i}px; }
+    .px-#{$i} { padding-inline: #{$i}px; }
+    .py-#{$i} {  padding-block: #{$i}px; }
+    .pa-#{$i} { padding: #{$i}px; }
+}
+
+@each $querie, $size in $queries {
+    @media (max-width: #{$size}px) {
+        @for $i from 1 through $sizes {
+            .#{$querie}-mb-#{$i} { margin-bottom: #{$i}px; }
+            .#{$querie}-mt-#{$i} { margin-top: #{$i}px; }
+            .#{$querie}-ml-#{$i} { margin-left: #{$i}px; }
+            .#{$querie}-mr-#{$i} { margin-right: #{$i}px; }
+            .#{$querie}-mx-#{$i} { margin-inline: #{$i}px; }
+            .#{$querie}-my-#{$i} {  margin-block: #{$i}px; }
+            .#{$querie}-ma-#{$i} { margin: #{$i}px; }
+            .#{$querie}-pb-#{$i} { padding-bottom: #{$i}px; }
+            .#{$querie}-pt-#{$i} { padding-top: #{$i}px; }
+            .#{$querie}-pl-#{$i} { padding-left: #{$i}px; }
+            .#{$querie}-pr-#{$i} { padding-right: #{$i}px; }
+            .#{$querie}-px-#{$i} { padding-inline: #{$i}px; }
+            .#{$querie}-py-#{$i} {  padding-block: #{$i}px; }
+            .#{$querie}-pa-#{$i} { padding: #{$i}px; }
+        }
+    }
+}

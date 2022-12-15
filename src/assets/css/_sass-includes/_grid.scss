@@ -1,21 +1,23 @@
 // default vars
 
 $queries : (
-    xs : 480px,
-    sm : 768,
-    md : 992,
-    lg : 1200,
+    xxl : 1600,
     xl : 1400,
-    xxl : 1600
+    lg : 1200,
+    md : 992,
+    sm : 768,
+    xs : 480
 ) !default;
 
-$gridcolumns: 12;
-$gaps: 40;
-$sizes: 80;
+
+$gridcolumns: 12 !default;
+$gaps: 40 !default; 
+
+
 
 // Grid
 
-.gridbox{
+.gridbox {
     display: grid;
     grid-auto-flow: dense;
 }
@@ -26,8 +28,20 @@ $sizes: 80;
     }
 }
 
-@for $cols from 1 through $gridcolumns{
+// grid cols
+@for $cols from 1 through $gridcolumns {
     .grid-col-#{$cols} {
-        grid-template-columns: repeat( #{$cols}, 1fr);
+        grid-template-columns: repeat(#{$cols}, 1fr);
     }
 }
+
+@each $querie, $size in $queries {
+    @media (max-width: #{$size}px) {
+        @for $cols from 1 through $gridcolumns {
+            .#{$querie}-grid-col-#{$cols} {
+                grid-template-columns: repeat(#{$cols}, 1fr);
+            }
+        }
+    }
+}
+
